@@ -5,11 +5,11 @@ declare interface PermissionsI {
 	requires: string[];
 }
 
-declare type PermissionsIdsI =
-	| "admin:super"
+declare type ClientPermissionsIdsI =
 	/* clients permissions */
 	| "client:all"
 	| "client:view"
+	| "client:auth_logs"
 	| "client:create"
 	| "client:enable"
 	| "client:edit"
@@ -32,7 +32,9 @@ declare type PermissionsIdsI =
 	| "client:edit_integration"
 	| "client:revoke_integration"
 	| "client:view_payment_method"
-	| "client:edit_payment_method"
+	| "client:edit_payment_method";
+
+declare type DeliveryPermissionsIdsI =
 	/* all delivery */
 	| "delivery:all"
 	| "delivery:view"
@@ -43,7 +45,9 @@ declare type PermissionsIdsI =
 	| "delivery:assign"
 	| "delivery:unassign"
 	| "delivery:cancel"
-	| "delivery:complete"
+	| "delivery:complete";
+
+declare type ShipmentPermissionsIdsI =
 	/* all shipments */
 	| "shipment:all"
 	| "shipment:view"
@@ -66,7 +70,6 @@ declare type PermissionsIdsI =
 	| "shipment:view_money_affected"
 	| "shipment:view_returned"
 	| "shipment:get_label"
-
 	/* shipment actions */
 	| "shipment:assign"
 	| "shipment:assign_transit"
@@ -82,13 +85,13 @@ declare type PermissionsIdsI =
 	| "shipment:confirm_return"
 	| "shipment:confirm_transited"
 	| "shipment:confirm_arriving"
-	| "shipment:confirm_money_collection"
+	| "shipment:confirm_money_collection";
+
+declare type ShipmentIssuesPermissionsIdsI =
 	/* issues */
-	| "issue:all"
-	| "issue:view"
-	| "issue:create"
-	| "issue:edit"
-	| "issue:delete"
+	"issue:all" | "issue:view" | "issue:create" | "issue:edit" | "issue:delete";
+
+declare type DeskPermissionsIdsI =
 	/* desks */
 	| "desk:all"
 	| "desk:generate_desks_excel"
@@ -99,19 +102,14 @@ declare type PermissionsIdsI =
 	| "desk:archive"
 	| "desk:view_workers"
 	| "desk:add_workers"
-	| "desk:remove_workers"
+	| "desk:remove_workers";
+
+declare type FinancialPermissionsIdsI =
 	/* financial */
-	| "financial:all"
-	| "financial:view"
-	| "financial:adjust"
-	| "financial:report"
-	/* 
-		"device:view"|
-		"device:add"|
-		"device:remove"| 
-	*/
-	| "activity_logs:view"
-	| "user_auth:view"
+	"financial:all" | "financial:view" | "financial:adjust" | "financial:report";
+
+declare type AdminPermissionsIdsI =
+	/* admin */
 	| "admin:all"
 	| "admin:view"
 	| "admin:create"
@@ -119,21 +117,34 @@ declare type PermissionsIdsI =
 	| "admin:edit"
 	| "admin:delete"
 	| "admin:view_clients"
-	| "admin:edit_clients"
-	| "role:all"
-	| "role:view"
-	| "role:assign"
-	| "role:view-all"
-	| "role:create"
-	| "role:edit"
-	| "role:delete"
+	| "admin:activity_logs"
+	| "admin:edit_clients";
+
+declare type RolesPermissionsIdsI =
+	/* roles */
+	"role:all" | "role:view" | "role:assign" | "role:view-all" | "role:create" | "role:edit" | "role:delete";
+
+declare type MoneyCollectionPermissionsIdsI =
+	/* money collection */
 	| "money_collection:all"
 	| "money_collection:view_one"
 	| "money_collection:view_sent"
 	| "money_collection:view_received"
 	| "money_collection:view_to_be_received"
 	| "money_collection:create"
-	| "money_collection:validate"
-	| "dashboard:all"
-	| "dashboard:view"
-	| "dashboard:edit";
+	| "money_collection:validate";
+
+declare type DashboardPermissionsIdsI = /* dashboard */ "dashboard:all" | "dashboard:view" | "dashboard:edit";
+
+declare type PermissionsIdsI =
+	| "admin:super"
+	| ClientPermissionsIdsI
+	| DeliveryPermissionsIdsI
+	| ShipmentPermissionsIdsI
+	| ShipmentIssuesPermissionsIdsI
+	| DeskPermissionsIdsI
+	| FinancialPermissionsIdsI
+	| AdminPermissionsIdsI
+	| RolesPermissionsIdsI
+	| MoneyCollectionPermissionsIdsI
+	| DashboardPermissionsIdsI;
