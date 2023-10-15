@@ -1,18 +1,9 @@
-export const AdminPermissions: Record<AdminPermissionsIdsI, PermissionsI> = {
-	// admin permissions
-	"admin:activity_logs": {
-		id: "admin:activity_logs",
-		name: "Activity Logs View",
-		description: "Activity Logs View",
-		requires: [],
-	},
-
-	//Admin Permissions:
+export const AdminGlobalPermissions: Record<AdminGlobalPermissionsIdsI, PermissionsI> = {
 	"admin:all": {
 		id: "admin:all",
 		name: "Admin All",
 		description: "Admin All",
-		requires: ["admin:view", "admin:create", "admin:enable", "admin:edit", "admin:delete"],
+		requires: ["admin:view", "admin:create", "admin:enable", "admin:edit"],
 	},
 	"admin:view": {
 		id: "admin:view",
@@ -20,6 +11,8 @@ export const AdminPermissions: Record<AdminPermissionsIdsI, PermissionsI> = {
 		description: "Admin View",
 		requires: [],
 	},
+};
+export const AdminManagementPermissions: Record<AdminManagementPermissionsIdsI, PermissionsI> = {
 	"admin:create": {
 		id: "admin:create",
 		name: "Admin Create",
@@ -38,23 +31,22 @@ export const AdminPermissions: Record<AdminPermissionsIdsI, PermissionsI> = {
 		description: "Admin Edit",
 		requires: ["admin:view"],
 	},
-	"admin:delete": {
-		id: "admin:delete",
-		name: "Admin Delete",
-		description: "Admin Delete",
-		requires: ["admin:view"],
-	},
-	/* admin clients */
-	"admin:view_clients": {
-		id: "admin:view_clients",
-		name: "Admin View Clients",
-		description: "Admin View Clients",
-		requires: ["admin:view"],
-	},
-	"admin:edit_clients": {
-		id: "admin:edit_clients",
-		name: "Admin Edit Clients",
-		description: "Admin Edit Clients",
-		requires: ["admin:view_clients"],
+};
+export const AdminActivitiesPermissions: Record<AdminActivitiesPermissionsIdsI, PermissionsI> = {
+	"admin:activity_logs": {
+		id: "admin:activity_logs",
+		name: "Activity Logs View",
+		description: "Activity Logs View",
+		requires: [],
 	},
 };
+export const AdminPermissions: Record<AdminPermissionsIdsI, PermissionsI> = {
+	//Admin Permissions:
+	...AdminGlobalPermissions,
+	...AdminManagementPermissions,
+	...AdminActivitiesPermissions,
+};
+export const AdminPermissionsD = Object.values(AdminPermissions);
+export const AdminGlobalPermissionsD = Object.values(AdminGlobalPermissions);
+export const AdminManagementPermissionsD = Object.values(AdminManagementPermissions);
+export const AdminActivitiesPermissionsD = Object.values(AdminActivitiesPermissions);

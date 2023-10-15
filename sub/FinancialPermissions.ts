@@ -1,5 +1,4 @@
-export const FinancialPermissions: Record<FinancialPermissionsIdsI, PermissionsI> = {
-	// Financial Permissions:
+export const FinancialGlobalPermissions: Record<FinancialGlobalPermissionsIdsI, PermissionsI> = {
 	"financial:all": {
 		id: "financial:all",
 		name: "Financial All",
@@ -12,6 +11,8 @@ export const FinancialPermissions: Record<FinancialPermissionsIdsI, PermissionsI
 		description: "Financial View",
 		requires: [],
 	},
+};
+export const FinancialActionsPermissions: Record<FinancialActionsPermissionsIdsI, PermissionsI> = {
 	"financial:adjust": {
 		id: "financial:adjust",
 		name: "Financial Adjust",
@@ -25,3 +26,11 @@ export const FinancialPermissions: Record<FinancialPermissionsIdsI, PermissionsI
 		requires: ["financial:view"],
 	},
 };
+export const FinancialPermissions: Record<FinancialPermissionsIdsI, PermissionsI> = {
+	// Financial Permissions:
+	...FinancialGlobalPermissions,
+	...FinancialActionsPermissions,
+};
+export const FinancialPermissionsD = Object.values(FinancialPermissions);
+export const FinancialGlobalPermissionsD = Object.values(FinancialGlobalPermissions);
+export const FinancialActionsPermissionsD = Object.values(FinancialActionsPermissions);

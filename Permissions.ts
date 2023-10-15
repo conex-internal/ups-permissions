@@ -18,14 +18,14 @@ export const Permissions: Record<PermissionsIdsI, PermissionsI> = {
 	},
 	...ClientPermissions,
 	...DeliveryPermissions,
+	...AdminPermissions,
 	...ShipmentPermissions,
 	...ShipmentIssuesPermissions,
-	...DeskPermissions,
-	...FinancialPermissions,
-	...AdminPermissions,
-	...RolesPermissions,
 	...DashboardPermissions,
+	...FinancialPermissions,
 	...MoneyCollectionPermissions,
+	...DeskPermissions,
+	...RolesPermissions,
 	// can see or not see COD
 };
 export const PermissionsIds = Object.keys(Permissions) as PermissionsIdsI[];

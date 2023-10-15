@@ -1,10 +1,9 @@
-export const MoneyCollectionPermissions: Record<MoneyCollectionPermissionsIdsI, PermissionsI> = {
+export const MoneyCollectionGlobalPermissions: Record<MoneyCollectionGlobalPermissionsIdsI, PermissionsI> = {
 	"money_collection:all": {
 		id: "money_collection:all",
 		name: "Money Collection All",
 		description: "Money Collection All",
 		requires: [
-			"money_collection:view",
 			"money_collection:view_one",
 			"money_collection:view_sent",
 			"money_collection:view_received",
@@ -13,6 +12,8 @@ export const MoneyCollectionPermissions: Record<MoneyCollectionPermissionsIdsI, 
 			"money_collection:validate",
 		],
 	},
+};
+export const MoneyCollectionAccessPermissions: Record<MoneyCollectionAccessPermissionsIdsI, PermissionsI> = {
 	"money_collection:view_one": {
 		id: "money_collection:view_one",
 		name: "Money Collection View One",
@@ -37,6 +38,8 @@ export const MoneyCollectionPermissions: Record<MoneyCollectionPermissionsIdsI, 
 		description: "Money Collection View To Be Received",
 		requires: ["money_collection:view_one"],
 	},
+};
+export const MoneyCollectionActionPermissions: Record<MoneyCollectionActionsPermissionsIdsI, PermissionsI> = {
 	"money_collection:create": {
 		id: "money_collection:create",
 		name: "Money Collection Create",
@@ -50,3 +53,12 @@ export const MoneyCollectionPermissions: Record<MoneyCollectionPermissionsIdsI, 
 		requires: ["money_collection:view_one"],
 	},
 };
+export const MoneyCollectionPermissions: Record<MoneyCollectionPermissionsIdsI, PermissionsI> = {
+	...MoneyCollectionGlobalPermissions,
+	...MoneyCollectionAccessPermissions,
+	...MoneyCollectionActionPermissions,
+};
+export const MoneyCollectionPermissionsD = Object.values(MoneyCollectionPermissions);
+export const MoneyCollectionGlobalPermissionsD = Object.values(MoneyCollectionGlobalPermissions);
+export const MoneyCollectionAccessPermissionsD = Object.values(MoneyCollectionAccessPermissions);
+export const MoneyCollectionActionPermissionsD = Object.values(MoneyCollectionActionPermissions);

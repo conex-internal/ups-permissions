@@ -1,10 +1,9 @@
-export const RolesPermissions: Record<RolesPermissionsIdsI, PermissionsI> = {
-	//Roles Permissions:
+export const RolesGlobalPermissions: Record<RolesGlobalPermissionsIdsI, PermissionsI> = {
 	"role:all": {
 		id: "role:all",
 		name: "Role All",
 		description: "Role All",
-		requires: ["role:view", "role:assign", "role:view-all", "role:create", "role:edit", "role:delete"],
+		requires: ["role:view", "role:assign", "role:create", "role:edit", "role:delete"],
 	},
 	"role:view": {
 		id: "role:view",
@@ -12,18 +11,8 @@ export const RolesPermissions: Record<RolesPermissionsIdsI, PermissionsI> = {
 		description: "Role View",
 		requires: [],
 	},
-	"role:assign": {
-		id: "role:assign",
-		name: "Role Assign",
-		description: "Role Assign",
-		requires: ["role:view"],
-	},
-	"role:view-all": {
-		id: "role:view-all",
-		name: "Role View All",
-		description: "Role View All",
-		requires: ["role:view"],
-	},
+};
+export const RolesManagementPermissions: Record<RolesManagementPermissionsIdsI, PermissionsI> = {
 	"role:create": {
 		id: "role:create",
 		name: "Role Create",
@@ -43,3 +32,21 @@ export const RolesPermissions: Record<RolesPermissionsIdsI, PermissionsI> = {
 		requires: ["role:view"],
 	},
 };
+export const RolesActionsPermissions: Record<RolesActionsPermissionsIdsI, PermissionsI> = {
+	"role:assign": {
+		id: "role:assign",
+		name: "Role Assign",
+		description: "Role Assign",
+		requires: ["role:view"],
+	},
+};
+export const RolesPermissions: Record<RolesPermissionsIdsI, PermissionsI> = {
+	//Roles Permissions:
+	...RolesGlobalPermissions,
+	...RolesManagementPermissions,
+	...RolesActionsPermissions,
+};
+export const RolesPermissionsD = Object.values(RolesPermissions);
+export const RolesGlobalPermissionsD = Object.values(RolesGlobalPermissions);
+export const RolesManagementPermissionsD = Object.values(RolesManagementPermissions);
+export const RolesActionsPermissionsD = Object.values(RolesActionsPermissions);

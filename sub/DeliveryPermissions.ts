@@ -1,17 +1,4 @@
-export const DeliveryPermissions: Record<DeliveryPermissionsIdsI, PermissionsI> = {
-	// Delivery man Permissions:
-	"delivery:all": {
-		id: "delivery:all",
-		name: "Delivery All",
-		description: "Delivery All",
-		requires: ["delivery:view", "delivery:create", "delivery:enable", "delivery:edit", "delivery:delete"],
-	},
-	"delivery:view": {
-		id: "delivery:view",
-		name: "Delivery View",
-		description: "Delivery View",
-		requires: [],
-	},
+export const DeliveryManagementPermissions: Record<DeliveryManagementPermissionsIdsI, PermissionsI> = {
 	"delivery:create": {
 		id: "delivery:create",
 		name: "Delivery Create",
@@ -30,12 +17,8 @@ export const DeliveryPermissions: Record<DeliveryPermissionsIdsI, PermissionsI> 
 		description: "Delivery Edit",
 		requires: ["delivery:view"],
 	},
-	"delivery:delete": {
-		id: "delivery:delete",
-		name: "Delivery Delete",
-		description: "Delivery Delete",
-		requires: ["delivery:view"],
-	},
+};
+export const DeliveryAssignmentPermissions: Record<DeliveryAssignmentPermissionsIdsI, PermissionsI> = {
 	"delivery:assign": {
 		id: "delivery:assign",
 		name: "Delivery Assign",
@@ -48,16 +31,28 @@ export const DeliveryPermissions: Record<DeliveryPermissionsIdsI, PermissionsI> 
 		description: "Delivery Unassign",
 		requires: ["delivery:view"],
 	},
-	"delivery:cancel": {
-		id: "delivery:cancel",
-		name: "Delivery Cancel",
-		description: "Delivery Cancel",
-		requires: ["delivery:view"],
+};
+export const DeliveryGlobalPermissions: Record<DeliveryGlobalPermissionsIdsI, PermissionsI> = {
+	"delivery:all": {
+		id: "delivery:all",
+		name: "Delivery All",
+		description: "Delivery All",
+		requires: ["delivery:view", "delivery:create", "delivery:enable", "delivery:edit"],
 	},
-	"delivery:complete": {
-		id: "delivery:complete",
-		name: "Delivery Complete",
-		description: "Delivery Complete",
-		requires: ["delivery:view"],
+	"delivery:view": {
+		id: "delivery:view",
+		name: "Delivery View",
+		description: "Delivery View",
+		requires: [],
 	},
 };
+export const DeliveryPermissions: Record<DeliveryPermissionsIdsI, PermissionsI> = {
+	// Delivery man Permissions:
+	...DeliveryGlobalPermissions,
+	...DeliveryManagementPermissions,
+	...DeliveryAssignmentPermissions,
+};
+export const DeliveryPermissionsD = Object.values(DeliveryPermissions);
+export const DeliveryGlobalPermissionsD = Object.values(DeliveryGlobalPermissions);
+export const DeliveryManagementPermissionsD = Object.values(DeliveryManagementPermissions);
+export const DeliveryAssignmentPermissionsD = Object.values(DeliveryAssignmentPermissions);

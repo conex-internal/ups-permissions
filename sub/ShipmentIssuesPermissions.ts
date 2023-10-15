@@ -1,10 +1,9 @@
-export const ShipmentIssuesPermissions: Record<ShipmentIssuesPermissionsIdsI, PermissionsI> = {
-	//Issue Permissions:
+export const ShipmentIssuesGlobalPermissions: Record<ShipmentIssuesGlobalPermissionsIdsI, PermissionsI> = {
 	"issue:all": {
 		id: "issue:all",
 		name: "Issue All",
 		description: "Issue All",
-		requires: ["issue:view", "issue:create", "issue:edit", "issue:delete"],
+		requires: ["issue:view", "issue:create", "issue:edit"],
 	},
 	"issue:view": {
 		id: "issue:view",
@@ -12,6 +11,8 @@ export const ShipmentIssuesPermissions: Record<ShipmentIssuesPermissionsIdsI, Pe
 		description: "Issue View",
 		requires: [],
 	},
+};
+export const ShipmentIssuesManagementPermissions: Record<ShipmentIssuesManagementPermissionsIdsI, PermissionsI> = {
 	"issue:create": {
 		id: "issue:create",
 		name: "Issue Create",
@@ -24,10 +25,12 @@ export const ShipmentIssuesPermissions: Record<ShipmentIssuesPermissionsIdsI, Pe
 		description: "Issue Edit",
 		requires: ["issue:view"],
 	},
-	"issue:delete": {
-		id: "issue:delete",
-		name: "Issue Delete",
-		description: "Issue Delete",
-		requires: ["issue:view"],
-	},
 };
+export const ShipmentIssuesPermissions: Record<ShipmentIssuesPermissionsIdsI, PermissionsI> = {
+	//Issue Permissions:
+	...ShipmentIssuesGlobalPermissions,
+	...ShipmentIssuesManagementPermissions,
+};
+export const ShipmentIssuesPermissionsD = Object.values(ShipmentIssuesPermissions);
+export const ShipmentIssuesGlobalPermissionsD = Object.values(ShipmentIssuesGlobalPermissions);
+export const ShipmentIssuesManagementPermissionsD = Object.values(ShipmentIssuesManagementPermissions);

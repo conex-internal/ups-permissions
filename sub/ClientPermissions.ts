@@ -1,28 +1,4 @@
-export const ClientPermissions: Record<ClientPermissionsIdsI, PermissionsI> = {
-	// Client Permissions:
-	"client:all": {
-		id: "client:all",
-		name: "Client All",
-		description: "Client All",
-		requires: [
-			"client:view",
-			"client:create",
-			"client:enable",
-			"client:edit",
-			"client:pin",
-			"client:password",
-			"client:view_balance",
-			"client:view_shipments",
-			"client:view_products",
-			"client:view_transactions",
-		],
-	},
-	"client:view": {
-		id: "client:view",
-		name: "Client View",
-		description: "Client View",
-		requires: [],
-	},
+export const ClientManagementPermissions: Record<ClientManagementPermissionsIdsI, PermissionsI> = {
 	"client:create": {
 		id: "client:create",
 		name: "Client Create",
@@ -53,13 +29,8 @@ export const ClientPermissions: Record<ClientPermissionsIdsI, PermissionsI> = {
 		description: "Client Password",
 		requires: ["client:view", "client:edit"],
 	},
-	/* client balance */
-	"client:view_balance": {
-		id: "client:view_balance",
-		name: "Client View Balance",
-		description: "Client View Balance",
-		requires: ["client:view"],
-	},
+};
+export const ClientShipmentPermissions: Record<ClientShipmentPermissionsIdsI, PermissionsI> = {
 	/* client Shipments */
 	"client:view_shipments": {
 		id: "client:view_shipments",
@@ -73,6 +44,8 @@ export const ClientPermissions: Record<ClientPermissionsIdsI, PermissionsI> = {
 		description: "Client Create Shipment",
 		requires: ["client:view"],
 	},
+};
+export const ClientProductPermissions: Record<ClientProductsPermissionsIdsI, PermissionsI> = {
 	/* client products */
 	"client:create_product": {
 		id: "client:create_product",
@@ -86,6 +59,15 @@ export const ClientPermissions: Record<ClientPermissionsIdsI, PermissionsI> = {
 		description: "Client View Products",
 		requires: ["client:view"],
 	},
+};
+export const ClientTransactionPermissions: Record<ClientTransactionsPermissionsIdsI, PermissionsI> = {
+	/* client balance */
+	"client:view_balance": {
+		id: "client:view_balance",
+		name: "Client View Balance",
+		description: "Client View Balance",
+		requires: ["client:view"],
+	},
 	/* Transactions */
 	"client:view_transactions": {
 		id: "client:view_transactions",
@@ -93,6 +75,23 @@ export const ClientPermissions: Record<ClientPermissionsIdsI, PermissionsI> = {
 		description: "Client View Transactions",
 		requires: ["client:view"],
 	},
+	"client:extract_money": {
+		id: "client:extract_money",
+		name: "Client Extract Money",
+		description: "Client Extract Money",
+		requires: ["client:view"],
+	},
+};
+export const ClientActivityPermissions: Record<ClientActivitiesPermissionsIdsI, PermissionsI> = {
+	/* logs */
+	"client:view_activity_logs": {
+		id: "client:view_activity_logs",
+		name: "Client View Activity Logs",
+		description: "Client View Activity Logs",
+		requires: ["client:view"],
+	},
+};
+export const ClientIntegrationPermissions: Record<ClientIntegrationPermissionsIdsI, PermissionsI> = {
 	// UPS Integration Permissions
 	"client:view_integration": {
 		id: "client:view_integration",
@@ -104,14 +103,16 @@ export const ClientPermissions: Record<ClientPermissionsIdsI, PermissionsI> = {
 		id: "client:revoke_integration",
 		name: "Client Revoke Integration",
 		description: "Client Revoke Integration",
-		requires: ["client:view_integration"],
+		requires: ["client:view", "client:view_integration"],
 	},
 	"client:edit_integration": {
 		id: "client:edit_integration",
 		name: "Client Edit Integration",
 		description: "Client Edit Integration",
-		requires: ["client:view_integration"],
+		requires: ["client:view", "client:view_integration"],
 	},
+};
+export const ClientPaymentMethodPermissions: Record<ClientPaymentMethodPermissionsIdsI, PermissionsI> = {
 	"client:view_payment_method": {
 		id: "client:view_payment_method",
 		name: "Client View Payment Method",
@@ -122,9 +123,10 @@ export const ClientPermissions: Record<ClientPermissionsIdsI, PermissionsI> = {
 		id: "client:edit_payment_method",
 		name: "Client Edit Payment Method",
 		description: "Client Edit Payment Method",
-		requires: ["client:view_payment_method"],
+		requires: ["client:view", "client:view_payment_method"],
 	},
-
+};
+export const ClientAddressPermissions: Record<ClientAddressesPermissionsIdsI, PermissionsI> = {
 	/* client addresses */
 	"client:view_addresses": {
 		id: "client:view_addresses",
@@ -150,24 +152,64 @@ export const ClientPermissions: Record<ClientPermissionsIdsI, PermissionsI> = {
 		description: "Client Unlink Address",
 		requires: ["client:view"],
 	},
-	/* logs */
-	"client:view_activity_logs": {
-		id: "client:view_activity_logs",
-		name: "Client View Activity Logs",
-		description: "Client View Activity Logs",
-		requires: ["client:view"],
+};
+export const ClientGlobalPermissions: Record<ClientGlobalPermissionsIdsI, PermissionsI> = {
+	// Client Permissions:
+	"client:all": {
+		id: "client:all",
+		name: "Client All",
+		description: "Client All",
+		requires: [
+			"client:view",
+			"client:create",
+			"client:enable",
+			"client:edit",
+			"client:edit_pin",
+			"client:edit_password",
+			"client:view_shipments",
+			"client:create_shipment",
+			"client:view_products",
+			"client:create_product",
+			"client:view_addresses",
+			"client:create_address",
+			"client:make_default_address",
+			"client:unlink_address",
+			"client:view_balance",
+			"client:view_transactions",
+			"client:extract_money",
+			"client:view_activity_logs",
+			"client:view_integration",
+			"client:edit_integration",
+			"client:revoke_integration",
+			"client:view_payment_method",
+			"client:edit_payment_method",
+		],
 	},
-	// User Authentication Permissions
-	"client:auth_logs": {
-		id: "client:auth_logs",
-		name: "User Authentication View",
-		description: "User Authentication View",
+	"client:view": {
+		id: "client:view",
+		name: "Client View",
+		description: "Client View",
 		requires: [],
 	},
-	"client:extract_money": {
-		id: "client:extract_money",
-		name: "Client Extract Money",
-		description: "Client Extract Money",
-		requires: ["client:view"],
-	},
 };
+export const ClientPermissions: Record<ClientPermissionsIdsI, PermissionsI> = {
+	...ClientGlobalPermissions,
+	...ClientManagementPermissions,
+	...ClientActivityPermissions,
+	...ClientIntegrationPermissions,
+	...ClientPaymentMethodPermissions,
+	...ClientAddressPermissions,
+	...ClientProductPermissions,
+	...ClientShipmentPermissions,
+	...ClientTransactionPermissions,
+};
+export const ClientPermissionsD = Object.values(ClientPermissions);
+export const ClientGlobalPermissionsD = Object.values(ClientGlobalPermissions);
+export const ClientManagementPermissionsD = Object.values(ClientManagementPermissions);
+export const ClientActivityPermissionsD = Object.values(ClientActivityPermissions);
+export const ClientIntegrationPermissionsD = Object.values(ClientIntegrationPermissions);
+export const ClientPaymentMethodPermissionsD = Object.values(ClientPaymentMethodPermissions);
+export const ClientAddressPermissionsD = Object.values(ClientAddressPermissions);
+export const ClientProductPermissionsD = Object.values(ClientProductPermissions);
+export const ClientShipmentPermissionsD = Object.values(ClientShipmentPermissions);
+export const ClientTransactionPermissionsD = Object.values(ClientTransactionPermissions);
