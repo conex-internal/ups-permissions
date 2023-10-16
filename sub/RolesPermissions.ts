@@ -37,7 +37,7 @@ export const RolesActionsPermissions: Record<RolesActionsPermissionsIdsI, Permis
 		id: "role:assign",
 		name: "Role Assign",
 		description: "Role Assign",
-		requires: ["role:view"],
+		requires: ["role:view", "admin:view"],
 	},
 };
 export const RolesPermissions: Record<RolesPermissionsIdsI, PermissionsI> = {

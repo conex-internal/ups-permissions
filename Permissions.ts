@@ -8,6 +8,7 @@ import { ShipmentPermissions } from "./sub/ShipmentPermissions";
 import { RolesPermissions } from "./sub/RolesPermissions";
 import { DashboardPermissions } from "./sub/DashboardPermissions";
 import { MoneyCollectionPermissions } from "./sub/MoneyCollectionPermissions";
+import { SettingsPermissions } from "./sub/SettingsPermissions";
 
 export const Permissions: Record<PermissionsIdsI, PermissionsI> = {
 	"admin:super": {
@@ -26,6 +27,6 @@ export const Permissions: Record<PermissionsIdsI, PermissionsI> = {
 	...MoneyCollectionPermissions,
 	...DeskPermissions,
 	...RolesPermissions,
-	// can see or not see COD
+	...SettingsPermissions,
 };
 export const PermissionsIds = Object.keys(Permissions) as PermissionsIdsI[];

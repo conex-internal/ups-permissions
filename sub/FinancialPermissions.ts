@@ -3,7 +3,7 @@ export const FinancialGlobalPermissions: Record<FinancialGlobalPermissionsIdsI, 
 		id: "financial:all",
 		name: "Financial All",
 		description: "Financial All",
-		requires: ["financial:view", "financial:adjust", "financial:report"],
+		requires: ["financial:view", "financial:adjust"],
 	},
 	"financial:view": {
 		id: "financial:view",
@@ -17,12 +17,6 @@ export const FinancialActionsPermissions: Record<FinancialActionsPermissionsIdsI
 		id: "financial:adjust",
 		name: "Financial Adjust",
 		description: "Financial Adjust",
-		requires: ["financial:view"],
-	},
-	"financial:report": {
-		id: "financial:report",
-		name: "Financial Report",
-		description: "Financial Report",
 		requires: ["financial:view"],
 	},
 };
