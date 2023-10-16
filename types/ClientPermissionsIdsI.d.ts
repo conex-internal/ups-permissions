@@ -18,7 +18,9 @@ declare type ClientGlobalPermissionsIdsI =
 	/* clients permissions */
 	| "client:all"
 	/* client view */
-	| "client:view";
+	| "client:view"
+	| "client:view_my_clients";
+
 declare type ClientPermissionsIdsI =
 	| ClientGlobalPermissionsIdsI
 	| ClientManagementPermissionsIdsI
