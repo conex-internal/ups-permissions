@@ -198,6 +198,12 @@ export const ClientGlobalPermissions: Record<ClientGlobalPermissionsIdsI, Permis
 		description: "Client View My Clients",
 		requires: ["client:view"],
 	},
+	"client:view_all_clients": {
+		id: "client:view_all_clients",
+		name: "Client View All Clients",
+		description: "Client View all Clients",
+		requires: ["client:view"],
+	},
 };
 export const ClientPermissions: Record<ClientPermissionsIdsI, PermissionsI> = {
 	...ClientGlobalPermissions,
