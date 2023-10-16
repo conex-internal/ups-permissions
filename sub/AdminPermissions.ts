@@ -31,6 +31,12 @@ export const AdminManagementPermissions: Record<AdminManagementPermissionsIdsI, 
 		description: "Admin Edit",
 		requires: ["admin:view"],
 	},
+	"admin:assign_clients": {
+		id: "admin:assign_clients",
+		name: "Admin Assign Clients",
+		description: "Admin Assign Clients",
+		requires: ["admin:view", "client:view"],
+	},
 };
 export const AdminActivitiesPermissions: Record<AdminActivitiesPermissionsIdsI, PermissionsI> = {
 	"admin:activity_logs": {
