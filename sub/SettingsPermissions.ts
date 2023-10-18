@@ -7,10 +7,16 @@ export const SettingsPermissions: Record<SettingsPermissionsIdsI, PermissionsI> 
 		description: "Settings View",
 		requires: [],
 	},
-	"settings:edit": {
-		id: "settings:edit",
-		name: "Settings Edit",
-		description: "Settings Edit",
+	"settings:edit_label": {
+		id: "settings:edit_label",
+		name: "Settings Edit Label",
+		description: "Settings Edit Label",
+		requires: ["settings:view"],
+	},
+	"settings:edit_landing": {
+		id: "settings:edit_landing",
+		name: "Settings Edit Landing",
+		description: "Settings Edit Landing",
 		requires: ["settings:view"],
 	},
 };
