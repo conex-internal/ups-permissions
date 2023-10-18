@@ -7,6 +7,7 @@ declare interface PermissionsI {
 
 declare type DashboardPermissionsIdsI = /* dashboard */ "dashboard:view";
 declare type SettingsPermissionsIdsI = /* settings */ "settings:view" | "settings:edit_label" | "settings:edit_landing";
+declare type TransactionsPermissionsIdsI = /* settings */ "transactions:view_all";
 
 declare type PermissionsIdsI =
 	| "admin:super"
@@ -19,5 +20,6 @@ declare type PermissionsIdsI =
 	| AdminPermissionsIdsI
 	| RolesPermissionsIdsI
 	| MoneyCollectionPermissionsIdsI
+	| TransactionsPermissionsIdsI
 	| DashboardPermissionsIdsI
 	| SettingsPermissionsIdsI;

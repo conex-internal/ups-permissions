@@ -9,6 +9,7 @@ import { RolesPermissions } from "./sub/RolesPermissions";
 import { DashboardPermissions } from "./sub/DashboardPermissions";
 import { MoneyCollectionPermissions } from "./sub/MoneyCollectionPermissions";
 import { SettingsPermissions } from "./sub/SettingsPermissions";
+import { TransactionsPermissions } from "./sub/TransactionsPermissions";
 
 export const Permissions: Record<PermissionsIdsI, PermissionsI> = {
 	"admin:super": {
@@ -25,6 +26,7 @@ export const Permissions: Record<PermissionsIdsI, PermissionsI> = {
 	...DashboardPermissions,
 	...FinancialPermissions,
 	...MoneyCollectionPermissions,
+	...TransactionsPermissions,
 	...DeskPermissions,
 	...RolesPermissions,
 	...SettingsPermissions,
