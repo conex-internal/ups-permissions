@@ -25,8 +25,6 @@ declare type ShipmentActionsPermissionsIdsI =
 	| "shipment:assign_return"
 	| "shipment:cancel"
 	| "shipment:cancel_assignment"
-	| "shipment:create_issue"
-	| "shipment:resolve_issue"
 	| "shipment:prepare"
 	| "shipment:re_collect"
 	| "shipment:confirm_collection"
