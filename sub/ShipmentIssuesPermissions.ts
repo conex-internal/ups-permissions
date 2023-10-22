@@ -3,7 +3,7 @@ export const ShipmentIssuesGlobalPermissions: Record<ShipmentIssuesGlobalPermiss
 		id: "issue:all",
 		name: "Issue All",
 		description: "Issue All",
-		requires: ["issue:view", "issue:create", "issue:edit"],
+		requires: ["issue:view", "issue:create", "issue:resolve"],
 	},
 	"issue:view": {
 		id: "issue:view",
@@ -19,10 +19,10 @@ export const ShipmentIssuesManagementPermissions: Record<ShipmentIssuesManagemen
 		description: "Issue Create",
 		requires: ["issue:view"],
 	},
-	"issue:edit": {
-		id: "issue:edit",
-		name: "Issue Edit",
-		description: "Issue Edit",
+	"issue:resolve": {
+		id: "issue:resolve",
+		name: "Issue Resolve",
+		description: "Resolve an issue of a shipment",
 		requires: ["issue:view"],
 	},
 };
