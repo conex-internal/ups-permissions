@@ -37,18 +37,6 @@ export const ShipmentActionsPermissions: Record<ShipmentActionsPermissionsIdsI, 
 		description: "Shipment Cancel Assignment",
 		requires: ["shipment:view"],
 	},
-	"shipment:create_issue": {
-		id: "shipment:create_issue",
-		name: "Shipment Create Issue",
-		description: "Shipment Create Issue",
-		requires: ["shipment:view"],
-	},
-	"shipment:resolve_issue": {
-		id: "shipment:resolve_issue",
-		name: "Shipment Resolve Issue",
-		description: "Shipment Resolve Issue",
-		requires: ["shipment:view"],
-	},
 	"shipment:prepare": {
 		id: "shipment:prepare",
 		name: "Shipment Prepare",

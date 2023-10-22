@@ -20,9 +20,25 @@ export const FinancialActionsPermissions: Record<FinancialActionsPermissionsIdsI
 		requires: ["financial:view"],
 	},
 };
+export const FinancialReportsPermissions: Record<FinancialReportsPermissionsIdsI, PermissionsI> = {
+	"financial:reports_view": {
+		id: "financial:reports_view",
+		name: "Financial Reports View",
+		description: "Financial Reports View",
+		requires: ["financial:view"],
+	},
+	"financial:reports_export": {
+		id: "financial:reports_export",
+		name: "Financial Reports Export",
+		description: "Financial Reports Export",
+		requires: ["financial:reports_view"],
+	},
+};
+
 export const FinancialPermissions: Record<FinancialPermissionsIdsI, PermissionsI> = {
 	// Financial Permissions:
 	...FinancialGlobalPermissions,
+	...FinancialReportsPermissions,
 	...FinancialActionsPermissions,
 };
 export const FinancialPermissionsD = Object.values(FinancialPermissions);
