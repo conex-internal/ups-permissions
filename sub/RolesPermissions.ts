@@ -40,13 +40,29 @@ export const RolesActionsPermissions: Record<RolesActionsPermissionsIdsI, Permis
 		requires: ["role:view", "admin:view"],
 	},
 };
+export const RolesGlobalManagementPermissions: Record<RolesGlobalManagementIdsI, PermissionsI> = {
+	"role:assign_global": {
+		id: "role:assign_global",
+		name: "Role Assign Global",
+		description: "Role Assign Global",
+		requires: ["role:view_global"],
+	},
+	"role:view_global": {
+		id: "role:view_global",
+		name: "Role View Global",
+		description: "Role View Global",
+		requires: [],
+	},
+};
 export const RolesPermissions: Record<RolesPermissionsIdsI, PermissionsI> = {
 	//Roles Permissions:
 	...RolesGlobalPermissions,
 	...RolesManagementPermissions,
 	...RolesActionsPermissions,
+	...RolesGlobalManagementPermissions,
 };
 export const RolesPermissionsD = Object.values(RolesPermissions);
 export const RolesGlobalPermissionsD = Object.values(RolesGlobalPermissions);
 export const RolesManagementPermissionsD = Object.values(RolesManagementPermissions);
 export const RolesActionsPermissionsD = Object.values(RolesActionsPermissions);
+export const RolesGlobalManagementPermissionsD = Object.values(RolesGlobalManagementPermissions);
