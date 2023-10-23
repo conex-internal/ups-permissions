@@ -53,6 +53,12 @@ export const RolesGlobalManagementPermissions: Record<RolesGlobalManagementIdsI,
 		description: "Role View Global",
 		requires: [],
 	},
+	"role:edit_global": {
+		id: "role:edit_global",
+		name: "Role Edit Global",
+		description: "Role Edit Global",
+		requires: ["role:view_global"],
+	},
 };
 export const RolesPermissions: Record<RolesPermissionsIdsI, PermissionsI> = {
 	//Roles Permissions:
