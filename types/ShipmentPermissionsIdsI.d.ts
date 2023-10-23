@@ -1,4 +1,4 @@
-declare type ShipmentGlobalPermissionsIdsI = "shipment:all" | "shipment:view";
+declare type ShipmentGlobalPermissionsIdsI = "shipment:all" | "shipment:view" | "shipment:view_pricing_details";
 
 declare type ShipmentManagementPermissionsIdsI = "shipment:create" | "shipment:get_label" | "shipment:edit" | "shipment:delete";
 
