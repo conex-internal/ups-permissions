@@ -44,3 +44,4 @@ export const FinancialPermissions: Record<FinancialPermissionsIdsI, PermissionsI
 export const FinancialPermissionsD = Object.values(FinancialPermissions);
 export const FinancialGlobalPermissionsD = Object.values(FinancialGlobalPermissions);
 export const FinancialActionsPermissionsD = Object.values(FinancialActionsPermissions);
+export const FinancialReportsPermissionsD = Object.values(FinancialReportsPermissions);
