@@ -126,6 +126,20 @@ export const ClientPaymentMethodPermissions: Record<ClientPaymentMethodPermissio
 		requires: ["client:view", "client:view_payment_method"],
 	},
 };
+export const ClientPaymentSettingsPermissions: Record<ClientPaymentSettingsPermissionsIdsI, PermissionsI> = {
+	"client:view_payment_settings": {
+		id: "client:view_payment_settings",
+		name: "Client View Payment Method",
+		description: "Client View Payment Method",
+		requires: ["client:view"],
+	},
+	"client:edit_payment_settings": {
+		id: "client:edit_payment_settings",
+		name: "Client Edit Payment Method",
+		description: "Client Edit Payment Method",
+		requires: ["client:view", "client:view_payment_settings"],
+	},
+};
 export const ClientAddressPermissions: Record<ClientAddressesPermissionsIdsI, PermissionsI> = {
 	/* client addresses */
 	"client:view_addresses": {
@@ -210,6 +224,7 @@ export const ClientPermissions: Record<ClientPermissionsIdsI, PermissionsI> = {
 	...ClientManagementPermissions,
 	...ClientActivityPermissions,
 	...ClientIntegrationPermissions,
+	...ClientPaymentSettingsPermissions,
 	...ClientPaymentMethodPermissions,
 	...ClientAddressPermissions,
 	...ClientProductPermissions,
@@ -221,6 +236,7 @@ export const ClientGlobalPermissionsD = Object.values(ClientGlobalPermissions);
 export const ClientManagementPermissionsD = Object.values(ClientManagementPermissions);
 export const ClientActivityPermissionsD = Object.values(ClientActivityPermissions);
 export const ClientIntegrationPermissionsD = Object.values(ClientIntegrationPermissions);
+export const ClientPaymentSettingsPermissionsD = Object.values(ClientPaymentSettingsPermissions);
 export const ClientPaymentMethodPermissionsD = Object.values(ClientPaymentMethodPermissions);
 export const ClientAddressPermissionsD = Object.values(ClientAddressPermissions);
 export const ClientProductPermissionsD = Object.values(ClientProductPermissions);

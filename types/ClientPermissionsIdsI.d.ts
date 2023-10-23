@@ -14,6 +14,9 @@ declare type ClientIntegrationPermissionsIdsI =
 	/* client integrations */
 	"client:view_integration" | "client:edit_integration" | "client:revoke_integration";
 declare type ClientPaymentMethodPermissionsIdsI = /* client payment method */ "client:view_payment_method" | "client:edit_payment_method";
+declare type ClientPaymentSettingsPermissionsIdsI =
+	/* client payment method */
+	"client:view_payment_settings" | "client:edit_payment_settings";
 declare type ClientGlobalPermissionsIdsI =
 	/* clients permissions */
 	| "client:all"
@@ -31,4 +34,5 @@ declare type ClientPermissionsIdsI =
 	| ClientTransactionsPermissionsIdsI
 	| ClientActivitiesPermissionsIdsI
 	| ClientIntegrationPermissionsIdsI
+	| ClientPaymentSettingsPermissionsIdsI
 	| ClientPaymentMethodPermissionsIdsI;
