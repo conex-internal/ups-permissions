@@ -124,6 +124,12 @@ export const ShipmentManagementPermissions: Record<ShipmentManagementPermissions
 		description: "Shipment Get Label",
 		requires: ["shipment:view"],
 	},
+	"shipment:export": {
+		id: "shipment:export",
+		name: "Shipment Export",
+		description: "Shipment Export",
+		requires: ["shipment:view"],
+	},
 };
 export const ShipmentStatusPermissions: Record<ShipmentStatusPermissionsIdsI, PermissionsI> = {
 	"shipment:view_coming": {
