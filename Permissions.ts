@@ -1,3 +1,4 @@
+import { AdsPermissions } from "./sub/AdsPermissions";
 import { AdminPermissions } from "./sub/AdminPermissions";
 import { ClientPermissions } from "./sub/ClientPermissions";
 import { DeliveryPermissions } from "./sub/DeliveryPermissions";
@@ -18,6 +19,7 @@ export const Permissions: Record<PermissionsIdsI, PermissionsI> = {
 		description: "Super Admin",
 		requires: [],
 	},
+	...AdsPermissions,
 	...ClientPermissions,
 	...DeliveryPermissions,
 	...AdminPermissions,
