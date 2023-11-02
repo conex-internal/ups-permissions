@@ -11,6 +11,7 @@ declare type TransactionsPermissionsIdsI = /* settings */ "transactions:view_all
 
 declare type PermissionsIdsI =
 	| "admin:super"
+	| AdsPermissionsIdsI
 	| ClientPermissionsIdsI
 	| DeliveryPermissionsIdsI
 	| ShipmentPermissionsIdsI
