@@ -32,12 +32,22 @@ export const AdsManagementPermissions: Record<AdsManagementPermissionsIdsI, Perm
 		requires: ["ads:view"],
 	},
 };
+export const AdsActionsPermissions: Record<AdsActionsPermissionsIdsI, PermissionsI> = {
+	"ads:notify": {
+		id: "ads:notify",
+		name: "Ads Notify",
+		description: "Ads Notify",
+		requires: ["ads:view"],
+	},
+};
 
 export const AdsPermissions: Record<AdsPermissionsIdsI, PermissionsI> = {
 	// Ads Permissions:
 	...AdsGlobalPermissions,
 	...AdsManagementPermissions,
+	...AdsActionsPermissions,
 };
 export const AdsPermissionsD = Object.values(AdsPermissions);
 export const AdsGlobalPermissionsD = Object.values(AdsGlobalPermissions);
 export const AdsManagementPermissionsD = Object.values(AdsManagementPermissions);
+export const AdsActionsPermissionsD = Object.values(AdsActionsPermissions);
