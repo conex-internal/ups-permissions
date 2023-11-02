@@ -31,6 +31,12 @@ export const AdsManagementPermissions: Record<AdsManagementPermissionsIdsI, Perm
 		description: "Ads Archive",
 		requires: ["ads:view"],
 	},
+	"ads:delete": {
+		id: "ads:delete",
+		name: "Ads Delete",
+		description: "Ads Delete",
+		requires: ["ads:view"],
+	},
 };
 export const AdsActionsPermissions: Record<AdsActionsPermissionsIdsI, PermissionsI> = {
 	"ads:notify": {
