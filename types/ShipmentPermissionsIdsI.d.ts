@@ -1,4 +1,5 @@
 declare type ShipmentGlobalPermissionsIdsI = "shipment:all" | "shipment:view" | "shipment:view_pricing_details";
+declare type ShipmentReportPermissionsIdsI = "shipment:reports_view" | "shipment:reports_export";
 
 declare type ShipmentManagementPermissionsIdsI =
 	| "shipment:create"
@@ -42,6 +43,7 @@ declare type ShipmentActionsPermissionsIdsI =
 declare type ShipmentPermissionsIdsI =
 	/* all shipments */
 	| ShipmentGlobalPermissionsIdsI
+	| ShipmentReportPermissionsIdsI
 	| ShipmentManagementPermissionsIdsI
 	| ShipmentStatusPermissionsIdsI
 	| ShipmentStatusPermissionsIdsI

@@ -18,6 +18,20 @@ export const ShipmentGlobalPermissions: Record<ShipmentGlobalPermissionsIdsI, Pe
 		requires: ["shipment:view"],
 	},
 };
+export const ShipmentReportPermissions: Record<ShipmentReportPermissionsIdsI, PermissionsI> = {
+	"shipment:reports_view": {
+		id: "shipment:reports_view",
+		name: "Shipment Reports View",
+		description: "Shipment Reports View",
+		requires: ["shipment:view"],
+	},
+	"shipment:reports_export": {
+		id: "shipment:reports_export",
+		name: "Shipment Reports Export",
+		description: "Shipment Reports Export",
+		requires: ["shipment:view"],
+	},
+};
 export const ShipmentActionsPermissions: Record<ShipmentActionsPermissionsIdsI, PermissionsI> = {
 	"shipment:assign_transit": {
 		id: "shipment:assign_transit",
@@ -214,6 +228,7 @@ export const ShipmentStatusPermissions: Record<ShipmentStatusPermissionsIdsI, Pe
 export const ShipmentPermissions: Record<ShipmentPermissionsIdsI, PermissionsI> = {
 	//Shipment Permissions:
 	...ShipmentGlobalPermissions,
+	...ShipmentReportPermissions,
 	...ShipmentActionsPermissions,
 	...ShipmentManagementPermissions,
 	...ShipmentStatusPermissions,
