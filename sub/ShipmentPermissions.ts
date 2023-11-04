@@ -31,6 +31,12 @@ export const ShipmentReportPermissions: Record<ShipmentReportPermissionsIdsI, Pe
 		description: "Shipment Reports Export",
 		requires: ["shipment:view"],
 	},
+	"shipment:reports_view_global": {
+		id: "shipment:reports_view_global",
+		name: "Shipment Reports View Global",
+		description: "Shipment Reports View Global",
+		requires: ["shipment:view"],
+	},
 };
 export const ShipmentActionsPermissions: Record<ShipmentActionsPermissionsIdsI, PermissionsI> = {
 	"shipment:assign_transit": {

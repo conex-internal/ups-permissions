@@ -33,6 +33,12 @@ export const FinancialReportsPermissions: Record<FinancialReportsPermissionsIdsI
 		description: "Financial Reports Export",
 		requires: ["financial:reports_view"],
 	},
+	"financial:reports_view_global": {
+		id: "financial:reports_view_global",
+		name: "Financial Reports View Global",
+		description: "Financial Reports View Global",
+		requires: ["financial:reports_view"],
+	},
 };
 
 export const FinancialPermissions: Record<FinancialPermissionsIdsI, PermissionsI> = {
