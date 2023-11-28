@@ -1,4 +1,4 @@
-declare type DeliveryGlobalPermissionsIdsI = "delivery:all" | "delivery:view";
+declare type DeliveryGlobalPermissionsIdsI = "delivery:all" | "delivery:view" | "delivery:view_activity_logs";
 declare type DeliveryAssignmentPermissionsIdsI = "delivery:assign" | "delivery:unassign";
 declare type DeliveryDesksPermissionsIdsI =
 	/* client addresses */

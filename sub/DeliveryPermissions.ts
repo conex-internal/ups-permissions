@@ -51,6 +51,12 @@ export const DeliveryGlobalPermissions: Record<DeliveryGlobalPermissionsIdsI, Pe
 		description: "Delivery View",
 		requires: [],
 	},
+	"delivery:view_activity_logs": {
+		id: "delivery:view_activity_logs",
+		name: "Delivery View Activity Logs",
+		description: "Delivery View Activity Logs",
+		requires: ["delivery:view"],
+	},
 };
 export const DeliveryDesksPermissions: Record<DeliveryDesksPermissionsIdsI, PermissionsI> = {
 	/* client addresses */
