@@ -17,6 +17,12 @@ export const DeliveryManagementPermissions: Record<DeliveryManagementPermissions
 		description: "Delivery Edit",
 		requires: ["delivery:view"],
 	},
+	"delivery:edit_password": {
+		id: "delivery:edit_password",
+		name: "Delivery Edit Password",
+		description: "Delivery Edit Password",
+		requires: ["delivery:view"],
+	},
 };
 export const DeliveryAssignmentPermissions: Record<DeliveryAssignmentPermissionsIdsI, PermissionsI> = {
 	"delivery:assign": {
