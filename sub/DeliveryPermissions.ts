@@ -52,9 +52,31 @@ export const DeliveryGlobalPermissions: Record<DeliveryGlobalPermissionsIdsI, Pe
 		requires: [],
 	},
 };
+export const DeliveryDesksPermissions: Record<DeliveryDesksPermissionsIdsI, PermissionsI> = {
+	/* client addresses */
+	"delivery:view_desks": {
+		id: "delivery:view_desks",
+		name: "Delivery View Desks",
+		description: "Delivery View Desks",
+		requires: ["delivery:view"],
+	},
+	"delivery:assign_desk": {
+		id: "delivery:assign_desk",
+		name: "Delivery Assign Desk",
+		description: "Delivery Assign Desk",
+		requires: ["delivery:view_desks"],
+	},
+	"delivery:unassign_desk": {
+		id: "delivery:unassign_desk",
+		name: "Delivery Unassign Desk",
+		description: "Delivery Unassign Desk",
+		requires: ["delivery:view_desks"],
+	},
+};
 export const DeliveryPermissions: Record<DeliveryPermissionsIdsI, PermissionsI> = {
 	// Delivery man Permissions:
 	...DeliveryGlobalPermissions,
+	...DeliveryDesksPermissions,
 	...DeliveryManagementPermissions,
 	...DeliveryAssignmentPermissions,
 };
@@ -62,3 +84,4 @@ export const DeliveryPermissionsD = Object.values(DeliveryPermissions);
 export const DeliveryGlobalPermissionsD = Object.values(DeliveryGlobalPermissions);
 export const DeliveryManagementPermissionsD = Object.values(DeliveryManagementPermissions);
 export const DeliveryAssignmentPermissionsD = Object.values(DeliveryAssignmentPermissions);
+export const DeliveryDesksPermissionsD = Object.values(DeliveryDesksPermissions);

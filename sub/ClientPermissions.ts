@@ -218,6 +218,33 @@ export const ClientGlobalPermissions: Record<ClientGlobalPermissionsIdsI, Permis
 		description: "Client View all Clients",
 		requires: ["client:view"],
 	},
+	"client:view_desk_clients": {
+		id: "client:view_desk_clients",
+		name: "Client View Desk Clients",
+		description: "Client View Desk Clients",
+		requires: ["client:view"],
+	},
+};
+export const ClientDesksPermissions: Record<ClientDesksPermissionsIdsI, PermissionsI> = {
+	/* client addresses */
+	"client:view_desks": {
+		id: "client:view_desks",
+		name: "Client View Desks",
+		description: "Client View Desks",
+		requires: ["client:view"],
+	},
+	"client:assign_desk": {
+		id: "client:assign_desk",
+		name: "Client Add Desk",
+		description: "Client Add Desk",
+		requires: ["client:view"],
+	},
+	"client:unassign_desk": {
+		id: "client:unassign_desk",
+		name: "Client Unlink Desk",
+		description: "Client Unlink Desk",
+		requires: ["client:view"],
+	},
 };
 export const ClientPermissions: Record<ClientPermissionsIdsI, PermissionsI> = {
 	...ClientGlobalPermissions,
@@ -227,6 +254,7 @@ export const ClientPermissions: Record<ClientPermissionsIdsI, PermissionsI> = {
 	...ClientPaymentSettingsPermissions,
 	...ClientPaymentMethodPermissions,
 	...ClientAddressPermissions,
+	...ClientDesksPermissions,
 	...ClientProductPermissions,
 	...ClientShipmentPermissions,
 	...ClientTransactionPermissions,
@@ -242,3 +270,4 @@ export const ClientAddressPermissionsD = Object.values(ClientAddressPermissions)
 export const ClientProductPermissionsD = Object.values(ClientProductPermissions);
 export const ClientShipmentPermissionsD = Object.values(ClientShipmentPermissions);
 export const ClientTransactionPermissionsD = Object.values(ClientTransactionPermissions);
+export const ClientDesksPermissionsD = Object.values(ClientDesksPermissions);

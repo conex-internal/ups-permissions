@@ -52,9 +52,33 @@ export const AdminActivitiesPermissions: Record<AdminActivitiesPermissionsIdsI, 
 		requires: [],
 	},
 };
+
+export const AdminDesksPermissions: Record<AdminDesksPermissionsIdsI, PermissionsI> = {
+	/* admin desks */
+	"admin:view_desks": {
+		id: "admin:view_desks",
+		name: "Admin View Desks",
+		description: "Admin View Desks",
+		requires: ["admin:view"],
+	},
+	"admin:assign_desk": {
+		id: "admin:assign_desk",
+		name: "Admin Assign Desk",
+		description: "Admin Assign Desk",
+		requires: ["admin:view_desks"],
+	},
+	"admin:unassign_desk": {
+		id: "admin:unassign_desk",
+		name: "Admin Unassign Desk",
+		description: "Admin Unassign Desk",
+		requires: ["admin:view_desks"],
+	},
+};
+
 export const AdminPermissions: Record<AdminPermissionsIdsI, PermissionsI> = {
 	//Admin Permissions:
 	...AdminGlobalPermissions,
+	...AdminDesksPermissions,
 	...AdminManagementPermissions,
 	...AdminActivitiesPermissions,
 };
@@ -62,3 +86,4 @@ export const AdminPermissionsD = Object.values(AdminPermissions);
 export const AdminGlobalPermissionsD = Object.values(AdminGlobalPermissions);
 export const AdminManagementPermissionsD = Object.values(AdminManagementPermissions);
 export const AdminActivitiesPermissionsD = Object.values(AdminActivitiesPermissions);
+export const AdminDesksPermissionsD = Object.values(AdminDesksPermissions);

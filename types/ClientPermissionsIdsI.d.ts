@@ -5,6 +5,10 @@ declare type ClientShipmentPermissionsIdsI = /* client shipments */ "client:view
 declare type ClientAddressesPermissionsIdsI =
 	/* client addresses */
 	"client:view_addresses" | "client:create_address" | "client:make_default_address" | "client:unlink_address";
+declare type ClientDesksPermissionsIdsI =
+	/* client addresses */
+	"client:view_desks" | "client:assign_desk" | "client:unassign_desk";
+
 declare type ClientProductsPermissionsIdsI = /* client products */ "client:view_products" | "client:create_product";
 declare type ClientTransactionsPermissionsIdsI =
 	/* client transactions */
@@ -22,6 +26,7 @@ declare type ClientGlobalPermissionsIdsI =
 	| "client:all"
 	/* client view */
 	| "client:view"
+	| "client:view_desk_clients"
 	| "client:view_my_clients"
 	| "client:view_all_clients";
 
@@ -30,6 +35,7 @@ declare type ClientPermissionsIdsI =
 	| ClientManagementPermissionsIdsI
 	| ClientShipmentPermissionsIdsI
 	| ClientAddressesPermissionsIdsI
+	| ClientDesksPermissionsIdsI
 	| ClientProductsPermissionsIdsI
 	| ClientTransactionsPermissionsIdsI
 	| ClientActivitiesPermissionsIdsI
